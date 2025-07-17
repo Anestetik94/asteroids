@@ -6,7 +6,7 @@ class Player(CircleShape):
         super().__init__(x, y, PLAYER_RADIUS)
         self.rotation = 0  # Player's rotation angle in degrees
     
-     def draw(self, screen):
+    def draw(self, screen):
         points = self.triangle()
         pygame.draw.polygon(screen, (255, 255, 255), points, 2)
 
