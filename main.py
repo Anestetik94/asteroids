@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import Player
 def main():
    
     print("Starting Asteroids!")
@@ -9,13 +10,14 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()  # Create a Clock object
     dt = 0  # Delta time in seconds
-
+    player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)  # Create a player instance
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 return
         screen.fill((0, 0, 0))
+        player.draw(screen)
         pygame.display.flip()
         dt = clock.tick(60) / 1000  # Limit to 60 FPS and get delta time in seconds
 
